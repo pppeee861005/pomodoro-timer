@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>像素番茄鐘</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="ambient-blob blob-one"></div>
+    <div class="ambient-blob blob-two"></div>
+    <div class="ambient-blob blob-three"></div>
+
+    <div class="page">
+        <header class="hero">
+            <p class="hero-subtitle">番茄兔專注屋</p>
+            <h1 class="hero-title">🍅 讓心情和番茄一起跳舞</h1>
+            <p class="hero-description">設定短距離目標，溫柔提醒自己專注的節奏。每一個番茄小冒險，都用可愛的節拍記錄。</p>
+        </header>
+
+        <section class="timer-card">
+            <div class="tomato-illustration">
+                <div class="tomato-leaf"></div>
+                <div class="tomato-body">
+                    <div class="tomato-face">
+                        <span class="tomato-eye left"></span>
+                        <span class="tomato-eye right"></span>
+                        <span class="tomato-smile"></span>
+                        <span class="tomato-blush blush-left"></span>
+                        <span class="tomato-blush blush-right"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timer-content">
+                <div class="timer-display">
+                    <div class="time" id="time">25:00</div>
+                    <div class="mode" id="mode">工作時間</div>
+                </div>
+
+                <div class="focus-hint" id="focusHint">準備好啟動你的第一個番茄吧！</div>
+
+                <div class="progress-container">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+
+                <div class="controls">
+                    <button class="btn btn-start" id="startBtn">開始</button>
+                    <button class="btn btn-pause" id="pauseBtn">暫停</button>
+                    <button class="btn btn-reset" id="resetBtn">重置</button>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-label">今日番茄</span>
+                        <span class="stat-value" id="tomatoCount">0</span>
+                    </div>
+                    <button class="btn btn-settings" id="settingsBtn">設定</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="focus-tips">
+            <h3>專注小口訣</h3>
+            <ul class="tips-list">
+                <li>喝一口水，讓腦袋也充滿能量。</li>
+                <li>把手機放進抽屜，專心的光線更亮。</li>
+                <li>每完成一個番茄，伸展一下雙手。</li>
+            </ul>
+        </section>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <div class="settings-panel hidden" id="settingsPanel">
+        <div class="settings-card">
+            <button class="close-panel" id="closeSettings" aria-label="關閉設定">✕</button>
+            <h2>時間設定</h2>
+            <div class="setting-item">
+                <label for="workTime">工作時間（分鐘）</label>
+                <input type="number" id="workTime" value="25" min="1" max="60">
+            </div>
+            <div class="setting-item">
+                <label for="shortBreak">短休息（分鐘）</label>
+                <input type="number" id="shortBreak" value="5" min="1" max="30">
+            </div>
+            <div class="setting-item">
+                <label for="longBreak">長休息（分鐘）</label>
+                <input type="number" id="longBreak" value="15" min="1" max="60">
+            </div>
+            <button class="btn btn-save" id="saveBtn">儲存</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
